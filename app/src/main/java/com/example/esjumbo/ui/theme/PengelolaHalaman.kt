@@ -15,15 +15,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.esjumbo.data.SumberData.flavors
-import com.example.esjumbo.ui.theme.HalamanDua
-import com.example.esjumbo.ui.theme.HalamanHome
-import com.example.esjumbo.ui.theme.HalamanSatu
 import com.example.esjumbo.ui.theme.OrderViewModel
 
 
 enum class PengelolaHalaman{
     Home,
+    Fomulir,
     Rasa,
     Summary
 }
@@ -42,26 +39,7 @@ fun EsJumboApp(
             startDestination = PengelolaHalaman.Home.name,
             modifier = Modifier.padding(innerpadding)
         ){
-            composable(route = PengelolaHalaman.Home.name){
-                HalamanHome(oneNextButtonClicked = {navHostController.navigate(PengelolaHalaman.Rasa.name)})
-            }
 
-            composable(route = PengelolaHalaman.Rasa.name){
-                val context = LocalContext.current
-                HalamanSatu(
-                    pilihanRasa = flavors.map { id -> context.resources.getString(id)},
-                    onSelectionChanged = {viewModel.setRasa(it)},
-                    onConfirmButtonClicked = {viewModel.setJumlah(it)},
-                    onNextButtonClicked = {navHostController.navigate(PengelolaHalaman.Summary.name)},
-                    onCancelButtonClicked = { })
-            }
-
-            composable(route = PengelolaHalaman.Summary.name){
-                HalamanDua(
-                    orderUiState = uiState,
-                    onBackButtonClicked = {}
-                )
-            }
         }
     }
 

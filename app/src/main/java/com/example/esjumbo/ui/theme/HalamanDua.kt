@@ -39,7 +39,7 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HalamanSatu(
+fun HalamanDua(
     pilihanRasa: List<String>,
     onSelectionChanged: (String) -> Unit,
     onConfirmButtonClicked: (Int) -> Unit,
@@ -138,7 +138,7 @@ fun HalamanSatu(
 fun HalamanSatuPreview(){
     val flavors = listOf("Natural", "Vanilla", "Lemon", "Milk", "Lyche")
 
-    HalamanSatu(
+    HalamanDua(
         pilihanRasa = flavors,
         onSelectionChanged = {},
         onConfirmButtonClicked = {},

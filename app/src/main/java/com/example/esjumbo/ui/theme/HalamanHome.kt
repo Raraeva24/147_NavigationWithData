@@ -59,7 +59,7 @@ fun HalamanHome (
                         .align(Alignment.CenterHorizontally)
                 )
                 Text(
-                    text = "Gembrunggung",
+                    text = "jUMBO",
                     color = Color.DarkGray,
                     fontStyle = FontStyle.Italic,
                     fontSize = 30.sp,
