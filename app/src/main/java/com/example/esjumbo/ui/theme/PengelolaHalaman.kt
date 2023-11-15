@@ -17,6 +17,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.esjumbo.ui.theme.HalamanHome
 import com.example.esjumbo.ui.theme.OrderViewModel
+import com.example.praktikum10november.ui.layout.HalamanSatu
 
 
 enum class PengelolaHalaman{
@@ -44,7 +45,9 @@ fun EsJumboApp(
                 HalamanHome(oneNextButtonClicked = {navHostController.navigate(PengelolaHalaman.Fomulir.name)})
             }
 
-
+            composable(route = PengelolaHalaman.Fomulir.name){
+                HalamanSatu(onSubmitButtonClicked = {viewModel.setContact(it)})
+            }
         }
     }
 
