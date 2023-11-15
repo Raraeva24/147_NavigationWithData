@@ -16,25 +16,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.esjumbo.R
-import com.example.esjumbo.data.OrderUiState
+import com.example.esjumbo.data.OrderUIState
 import com.example.esjumbo.ui.komponen.FormatLabelHarga
 
 @Composable
 fun HalamanDua (
-    orderUiState: OrderUiState,
-    onCancelButtonClicked: () -> Unit,
-    modifier: Modifier = Modifier
+    orderUiState: OrderUIState,
+    onBackButtonClicked: () -> Unit,
 ){
     val items = listOf(
         Pair(stringResource(R.string.quantity), orderUiState.jumlah),
         Pair(stringResource(R.string.flavor), orderUiState.rasa)
     )
     Column (
-        modifier = modifier,
+        modifier = Modifier,
         verticalArrangement = Arrangement.SpaceBetween
     ){
         Column (
@@ -67,10 +66,16 @@ fun HalamanDua (
             }
             OutlinedButton(
                 modifier = Modifier.fillMaxWidth(),
-                onClick = { onCancelButtonClicked }
+                onClick =  onBackButtonClicked
             ) {
                 Text(stringResource(R.string.cancel))
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun HalamanDuaPreview(){
+    HalamanDua(orderUiState = OrderUIState(), onBackButtonClicked = { /*TODO*/ })
 }

@@ -33,7 +33,9 @@ import org.w3c.dom.Text
 
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -47,7 +49,7 @@ fun HalamanSatu(
 )
 {
     var rasaYgDipilih by rememberSaveable { mutableStateOf("")}
-    var textJmlBeli by rememberSaveable { mutableStateOf("")}
+    var textJmlBeli by remember{ mutableStateOf("")}
 
     Column(modifier = modifier,
         verticalArrangement = Arrangement.SpaceBetween){
@@ -116,7 +118,7 @@ fun HalamanSatu(
             ){
                 OutlinedButton(modifier = Modifier.weight(1f), onClick =
                 onCancelButtonClicked){
-                        Text(stringResource(R.string.confirm ))
+                        Text(stringResource(R.string.cancel ))
                     }
                 Button(
                     modifier = Modifier.weight(1f),
@@ -129,4 +131,17 @@ fun HalamanSatu(
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun HalamanSatuPreview(){
+    val flavors = listOf("Natural", "Vanilla", "Lemon", "Milk", "Lyche")
+
+    HalamanSatu(
+        pilihanRasa = flavors,
+        onSelectionChanged = {},
+        onConfirmButtonClicked = {},
+        onNextButtonClicked = { /*TODO*/ },
+        onCancelButtonClicked = { /*TODO*/ })
 }

@@ -20,6 +20,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -30,10 +32,8 @@ fun HalamanHome (
     oneNextButtonClicked: () -> Unit)
 {
     val image = painterResource(id = R.drawable.download)
-    Column(
-        modifier = Modifier,
-        verticalArrangement = Arrangement.SpaceBetween
-    ) {
+    Column( modifier = Modifier,
+        verticalArrangement = Arrangement.SpaceBetween) {
         OutlinedCard(
             colors = CardDefaults.cardColors(
                 containerColor = MaterialTheme.colorScheme.surface,
@@ -45,10 +45,11 @@ fun HalamanHome (
         ){
             Column (horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
-                    .align(Alignment.CenterHorizontally)
-            ){
+                    .align(Alignment.CenterHorizontally)){
                 Image(
-                    painter = image, contentDescription = null, contentScale = ContentScale.Crop
+                    painter = image,
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop
                 )
                 Text(
                     text = "es Teh",
@@ -60,9 +61,9 @@ fun HalamanHome (
                 Text(
                     text = "Gembrunggung",
                     color = Color.DarkGray,
-                    fontSize = 60.sp,
-                    modifier = Modifier
-                        .align(Alignment.CenterHorizontally)
+                    fontStyle = FontStyle.Italic,
+                    fontSize = 30.sp,
+                    fontWeight = FontWeight.Bold
                 )
             }
         }
