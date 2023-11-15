@@ -15,6 +15,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.esjumbo.ui.theme.HalamanHome
 import com.example.esjumbo.ui.theme.OrderViewModel
 
 
@@ -39,6 +40,10 @@ fun EsJumboApp(
             startDestination = PengelolaHalaman.Home.name,
             modifier = Modifier.padding(innerpadding)
         ){
+            composable(route = PengelolaHalaman.Home.name){
+                HalamanHome(oneNextButtonClicked = {navHostController.navigate(PengelolaHalaman.Fomulir.name)})
+            }
+
 
         }
     }
