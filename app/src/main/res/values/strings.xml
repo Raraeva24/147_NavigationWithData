@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">App_Name</string>
+    <string name="nama">Nama</string>
+    <string name="alamat">Alamat</string>
+    <string name="tlp">Nomor Telepon</string>
+    <string name="buttonsubmit">Submit</string>
+    <string name="buttonback">Back</string>
     <string name="back_button">Kembali</string>
     <string name="confirm">Konfirmasi</string>
     <string name="next">Lanjut</string>
