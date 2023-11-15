@@ -103,6 +103,6 @@ fun HalamanTiga (
 
 @Preview
 @Composable
-fun HalamanDuaPreview(){
+fun HalamanTigaPreview(){
     HalamanTiga(orderUiState = OrderUiState(), onBackButtonClicked = { /*TODO*/ })
 }

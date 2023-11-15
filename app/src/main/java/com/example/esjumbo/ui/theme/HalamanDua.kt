@@ -135,7 +135,7 @@ fun HalamanDua(
 
 @Preview
 @Composable
-fun HalamanSatuPreview(){
+fun HalamanDuaPreview(){
     val flavors = listOf("Natural", "Vanilla", "Lemon", "Milk", "Lyche")
 
     HalamanDua(
